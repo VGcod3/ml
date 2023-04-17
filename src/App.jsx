@@ -12,7 +12,7 @@ import { motion, } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaBars } from 'react-icons/fa';
 
 
-import myPhoto from './img/me.jpg'
+import myPhoto from '/me.jpg'
 
 import useAnimateInView from "./UseAnimateHook";
 
