@@ -66,7 +66,6 @@ const Header = () => {
       <Drawer isOpen={ isOpen } onClose={ toggleMenu } >
         <DrawerOverlay />
         <DrawerContent className="mt-[72px] pt-6 bg-green-500">
-          {/* <DrawerCloseButton /> */ }
 
           <DrawerBody >
             <ul className="flex flex-col items-center list-none">
@@ -101,7 +100,7 @@ const FullScreenImage = () => {
   return (
     <Box
       className="flex items-center justify-center h-screen bg-no-repeat bg-center bg-cover"
-      bgImage="url(./src/img/bg.png)"
+      bgImage="url(/bg.png)"
     >
       <motion.div
         ref={ ref }
@@ -341,7 +340,7 @@ const Time = () => {
   return (
     <Box
       className="flex items-center justify-center py-12 min-h-screen bg-no-repeat bg-center bg-cover"
-      bgImage="url(./src/img/time-bg.png)"
+      bgImage="url(/time-bg.png)"
       id="time"
     >
       <motion.div
