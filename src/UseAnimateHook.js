@@ -3,21 +3,20 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 
-const useAnimateInView = () => {
+const useAnimateInView = ({ initial, desired, transition }) => {
     const { ref, inView } = useInView();
     const controls = useAnimation();
 
     useEffect(() => {
         if (inView) {
             controls.start({
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1, ease: "easeOut" },
+                ...desired,
+                transition: transition,
             });
         } else {
-            controls.start({ opacity: 0, y: 50 });
+            controls.start(initial);
         }
-    }, [controls, inView]);
+    }, [controls, inView, initial, desired, transition]);
 
     return { ref, controls };
 };
