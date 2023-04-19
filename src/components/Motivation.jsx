@@ -1,101 +1,50 @@
 import {
     Box
 } from "@chakra-ui/react";
-import { motion, } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 import useAnimateInView from "../UseAnimateHook";
 
 const Motivation = () => {
-    const { ref: ref1, controls: controls1 } = useAnimateInView({
+    const animations = [];
+    const animationSetup = {
         initial: { opacity: 0, y: 50 },
         desired: { opacity: 1, y: 0 },
         transition: { duration: 1, ease: "easeOut" },
-    });
-    const { ref: ref2, controls: controls2 } = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const { ref: ref3, controls: controls3 } = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const { ref: ref4, controls: controls4 } = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
+    };
 
-    const title1Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const response1Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const title2Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const response2Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const title3Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const response3Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const title4Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
-    const response4Animation = useAnimateInView({
-        initial: { opacity: 0, y: 50 },
-        desired: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: "easeOut" },
-    });
+    for (let i = 0; i < 12; i++) {
+        animations[i] = useAnimateInView(animationSetup);
+    }
 
     return (
         <>
             <Box className="px-10 min-h-screen flex flex-col my-11 justify-center gap-12 backdrop-blur-md" id="ejc">
                 <motion.h2
-                    ref={ title1Animation.ref }
-                    animate={ title1Animation.controls }
+                    ref={ animations[0].ref }
+                    animate={ animations[0].controls }
                     className="text-4xl font-bold mb-4 text-indigo-500"
                 >
                     Початок, певно
                 </motion.h2>
                 <motion.p
-                    ref={ response1Animation.ref }
-                    animate={ response1Animation.controls }
+                    ref={ animations[1].ref }
+                    animate={ animations[1].controls }
                     className="text-lg mb-4"
                 >
                     Я довго думав як мочати МЛ, бо перше враження це важливо. І придумав я мотивацію, бо все на світі можна навчитися робити і зробити. Було би бажання. Отже, МОТИВАЦІЯ ЗАРІШАЄ.
                 </motion.p>
                 <motion.h2
-                    ref={ title2Animation.ref }
-                    animate={ title2Animation.controls }
+                    ref={ animations[2].ref }
+                    animate={ animations[2].controls }
                     className="text-4xl font-bold mb-4 text-blue-500"
                 >
                     Чому ІЯК?
                 </motion.h2>
                 <motion.div
-                    ref={ response2Animation.ref }
-                    animate={ response2Animation.controls }
+                    ref={ animations[3].ref }
+                    animate={ animations[3].controls }
                     className="text-lg mb-4 flex flex-col gap-4"
                 >
                     <p>Поки інші чекають влучну можливість, я використовую кожну</p>
@@ -104,29 +53,29 @@ const Motivation = () => {
                     </p>
                 </motion.div>
                 <motion.h2
-                    ref={ title4Animation.ref }
-                    animate={ title4Animation.controls }
+                    ref={ animations[4].ref }
+                    animate={ animations[4].controls }
                     className="text-4xl font-bold mb-4 text-red-500"
                 >
                     Нащо мені БЕСТ?
                 </motion.h2>
                 <motion.p
-                    ref={ response4Animation.ref }
-                    animate={ response4Animation.controls }
+                    ref={ animations[5].ref }
+                    animate={ animations[5].controls }
                     className="text-lg mb-4"
                 >
                     Ще з самого початку сумніву не було, що BEST це те, частиною чого я хочу бути. Бо це про друзів, про розвиток себе і навколишніх, відпочинок і перспективу на майбутнє. Як я часто люблю казати, баланс для слабаків. Work hard, party harder! Більш конкретно, то тут я зможу реалізуватися в усіх бажаних сферах і ОДРАЗУ. Я про програмування, роботу в команді, волонтерство, лідерство і спілкування.
                 </motion.p >
                 <motion.h2
-                    ref={ title3Animation.ref }
-                    animate={ title3Animation.controls }
+                    ref={ animations[6].ref }
+                    animate={ animations[6].controls }
                     className="text-4xl font-bold mb-4 text-orange-500"
                 >
                     Чому саме цю посаду?
                 </motion.h2>
                 <motion.div
-                    ref={ response3Animation.ref }
-                    animate={ response3Animation.controls }
+                    ref={ animations[7].ref }
+                    animate={ animations[7].controls }
                     className="text-lg mb-4 flex flex-col gap-4"
                 >
                     <p>
@@ -145,15 +94,15 @@ const Motivation = () => {
             </Box >
             <Box className="px-10 my-12 min-h-screen flex flex-col justify-center gap-12 backdrop-blur-md" id="why_me">
                 <motion.h2
-                    ref={ ref1 }
-                    animate={ controls1 }
+                    ref={ animations[8].ref }
+                    animate={ animations[8].controls }
                     className="text-4xl font-bold mb-4 text-green-500"
                 >
                     Чому я?
                 </motion.h2>
                 <motion.div
-                    ref={ ref2 }
-                    animate={ controls2 }
+                    ref={ animations[9].ref }
+                    animate={ animations[9].controls }
                     className="text-lg mb-4 flex flex-col gap-4"
                 >
                     <p>
@@ -168,15 +117,15 @@ const Motivation = () => {
                     </p>
                 </motion.div>
                 <motion.h2
-                    ref={ ref3 }
-                    animate={ controls3 }
+                    ref={ animations[10].ref }
+                    animate={ animations[10].controls }
                     className="text-4xl font-bold mb-4 text-yellow-500"
                 >
                     І чим то я буду займатися?
                 </motion.h2>
                 <motion.div
-                    ref={ ref4 }
-                    animate={ controls4 }
+                    ref={ animations[11].ref }
+                    animate={ animations[11].controls }
                     className="text-lg mb-4 flex flex-col gap-4"
                 >
                     <p>
